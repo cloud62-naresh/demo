@@ -1,0 +1,22 @@
+<html>
+  <head>
+   <title>UseSwap</title>
+    <script language="JavaScript">
+     function InitializeService(){
+      service.useService(http://localhost:8080/axis2/services/DataArchService?wsdl, "getContactsService");
+     }
+
+     function GetAge(){
+      service.GetAgeService.callService("getContacts", "0015000000FWE78AAH");
+     }
+     function ShowResult(){
+    alert(event.result.value);
+      }
+     </script>
+    </head>
+     <body onload="InitializeService()" id="service" 
+	style="behavior:url(webservice.htc)" onresult="ShowResult()">
+       <button onclick="GetAge()">Get Age</button>
+      </form>
+     </body>
+ </html>

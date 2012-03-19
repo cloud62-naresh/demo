@@ -1,0 +1,11 @@
+<apex:page standardController="account" >
+<apex:pageblock >
+  <apex:pageblockTable value="{!account}" var="con" columns="2">
+  <apex:column value="{!con.Name}"/>
+  </apex:pageblockTable>
+  
+  <apex:dataList value="{!account}" type="account" rows="3" var="aList">{!aList.Name}</apex:dataList>
+</apex:pageblock>
+
+<apex:dataTable value="{!account.Contacts}" var="c"></apex:dataTable>
+  </apex:page>

@@ -1,0 +1,7 @@
+<apex:page tabStyle="Lead">
+<br></br>
+<br></br>
+<apex:outputText >
+  <b>You have sucessfully submitted your information. Our executive will contact you shortly. Thank you for using Force.com.</b>
+  </apex:outputText>
+</apex:page>

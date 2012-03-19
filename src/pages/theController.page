@@ -1,0 +1,7 @@
+<apex:page standardController="Test__c" recordSetVar="records" >
+<apex:pageblock >
+<apex:pageblockTable value="{!records}" var="r">
+<apex:column value="{!r.Id}"/>
+</apex:pageblockTable>
+</apex:pageblock>
+</apex:page>

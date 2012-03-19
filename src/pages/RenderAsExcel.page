@@ -1,0 +1,11 @@
+<apex:page standardController="Account" contenttype="application/vnd.ms-excel"> 
+<table> 
+<tr> 
+<apex:repeat value="{!account.Contacts}" var="contact"> 
+<td><apex:outputField value="{!contact.Name}"/></td> 
+<td><apex:outputField value="{!contact.MailingCity}"/></td> 
+<td><apex:outputField value="{!contact.Phone}"/></td> 
+</apex:repeat> 
+</tr> 
+</table> 
+</apex:page>

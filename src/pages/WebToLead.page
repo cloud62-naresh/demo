@@ -1,0 +1,106 @@
+<apex:page tabStyle="Lead" controller="WebToLead">
+
+<style>
+
+.locationError { color: red; font-weight: strong;}
+
+.employeeError { color: red; font-weight: strong;}
+
+</style>
+
+
+<script>
+
+function validateForm(lastnameId, companyId) {
+var lastName = document.getElementById(lastnameId).value;
+var company = document.getElementById(companyId).value;
+if(lastName!=null && lastName.length>0){}else{alert('Please enter the Last Name'); return false;}
+if(company!=null && company.length>0){}else{alert('Please enter the Company'); return false;}
+
+return true;
+
+}
+
+</script>
+
+  <apex:form id="theForm">
+
+    <apex:pageBlock title="Web-To-Lead" id="theBlock">
+
+                <apex:pageBlockButtons >
+
+                    <apex:commandButton value="Submit" action="{!submit}" onclick="return validateForm('{!$Component.theForm.theBlock.thePageBlockSection.theSectionItemLastName.last_name}', '{!$Component.theForm.theBlock.thePageBlockSection.theSectionItemCompany.company}');"/>
+
+                </apex:pageBlockButtons>
+
+        
+
+        
+
+        <apex:pageBlockSection title="Personal Information Section" columns="2" id="thePageBlockSection">
+
+        
+
+            <apex:pageblockSectionItem >
+
+            <apex:outputLabel value="First Name" for="first_name"></apex:outputLabel>
+
+            <apex:inputText id="first_name" value="{!firstName}"/>
+
+            </apex:pageblockSectionItem>
+
+            <apex:pageblockSectionItem id="theSectionItemLastName">
+
+            <apex:outputLabel value="Last Name" for="last_name"></apex:outputLabel>
+
+            <apex:inputText id="last_name" value="{!lastName}" required="true"><apex:message for="last_name" styleClass="locationError" /></apex:inputText>
+
+            
+
+            </apex:pageblockSectionItem>
+
+            <apex:pageblockSectionItem >
+
+            <apex:outputLabel value="Email" for="email"></apex:outputLabel>
+
+            <apex:inputText id="email" value="{!email}"/>
+
+            </apex:pageblockSectionItem>
+
+            <apex:pageblockSectionItem id="theSectionItemCompany">
+
+            <apex:outputLabel value="Company" for="company"></apex:outputLabel>
+
+            <apex:inputText id="company" value="{!company}" required="true"/>
+
+            </apex:pageblockSectionItem>
+
+            <apex:pageblockSectionItem >
+
+            <apex:outputLabel value="City" for="city"></apex:outputLabel>
+
+            <apex:inputText id="city" value="{!city}"/>
+
+            </apex:pageblockSectionItem>
+
+            <apex:pageblockSectionItem >
+
+            <apex:outputLabel value="State" for="state"></apex:outputLabel>
+
+            <apex:inputText id="state" value="{!state}"/>
+
+            </apex:pageblockSectionItem>            
+
+        </apex:pageBlockSection>
+
+       <apex:inputHidden id="oid" value="{!companyId}"/>
+
+       <apex:inputhidden id="retURL" value="{!retURL}"/>
+
+    </apex:pageBlock>
+
+ </apex:form>
+
+
+
+</apex:page>

@@ -1,0 +1,50 @@
+<apex:page sidebar="true" showHeader="true" StandardController="Account" tabStyle="Opportunity">
+
+<apex:pageBlock >
+<apex:panelBar >
+<apex:panelBarItem label="panel 1">This is Panel 1</apex:panelBarItem>
+<apex:panelBarItem label="panel 2">This is Panel 2</apex:panelBarItem>
+<apex:panelBarItem label="panel 3">This is Panel 3</apex:panelBarItem>
+<apex:panelBarItem label="panel 4">This is Panel 4</apex:panelBarItem>
+
+</apex:panelBar>
+</apex:pageBlock>
+<apex:form >
+<apex:sectionHeader title="Survey Wizard" help="ComponentBinding" rendered="true" subtitle="Opp"/>
+    <apex:pageBlock mode="detail" title="tt" tabStyle="Account">
+    <apex:pageBlockButtons location="both"><apex:commandButton value="save" action="{!save}" /></apex:pageBlockButtons>
+  <apex:pageBlockSection >
+
+    <apex:inputfield value="{!account.Name}"/>
+    <apex:inputField value="{!account.Phone}"/>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1">
+</apex:pageBlockSection>
+
+<apex:pageblockSection >
+</apex:pageblockSection>
+
+  </apex:pageBlock>
+  
+  
+ 
+  </apex:form>
+  <apex:include pageName="WebToLead"/>
+
+<apex:pageBlock id="theTabBlock">
+<apex:tabPanel >
+<apex:tab name="Contacts" label="Contacts"></apex:tab>
+<apex:tab name="Products" label="Products"></apex:tab>
+<apex:tab name="DashBoards" label="DashBoards"></apex:tab>
+</apex:tabPanel>
+</apex:pageBlock>
+  
+  <apex:pageBlock >
+  <apex:toolbar itemSeparator="" contentStyle="account">
+  <apex:toolbarGroup >Lead</apex:toolbarGroup>
+  <apex:toolbarGroup >Opportunity</apex:toolbarGroup>
+  <apex:toolbarGroup >Account</apex:toolbarGroup>
+  </apex:toolbar>
+  </apex:pageBlock>
+
+</apex:page>
