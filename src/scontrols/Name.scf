@@ -1,6 +1,6 @@
 <html>
   <head>
-   <title>UseSwap</title>
+   <title>UseSwap1</title>
     <script language="JavaScript">
      function InitializeService(){
       service.useService(http://localhost:8080/axis2/services/DataArchService?wsdl, "getContactsService");
